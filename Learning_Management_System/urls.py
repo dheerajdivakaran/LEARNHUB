@@ -1,0 +1,39 @@
+"""
+URL configuration for Learning_Management_System project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/6.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from LearnHub import views
+from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('register/',views.SignupView.as_view()),
+    path('user/',views.userlistview.as_view()),
+
+    path('jwt_login/',TokenObtainPairView.as_view()),
+    path('api/refresh/',TokenRefreshView.as_view()),
+
+    path('category/',views.CategoryListCreateView.as_view()),
+    path('category/<int:category_id>/',views.CategoryUpdateDeleteView.as_view()),
+
+    path('course/',views.CourseCreateListView.as_view()),
+    path('course/<int:course_id>/',views.CourseRetrieveUpdateDeleteView.as_view()),
+
+    path('enrollment/', views.EnrollmentCreateView.as_view()),
+    path('enrollment/<int:enrollment_id>/',views.EnrollmentRetrieveDelete.as_view())
+
+]

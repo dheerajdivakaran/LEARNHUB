@@ -1,0 +1,126 @@
+###
+POST http://127.0.0.1:8000/register/
+Content-Type:application/json
+
+{
+    "username": "anshas",
+    "password": "anshas@123",
+    "email": "anshas@gmail.com"
+}
+
+###
+GET http://127.0.0.1:8000/user/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/jwt_login/
+Content-Type: application/json
+
+{
+    "username":"anshas",
+    "password":"anshas@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/refresh/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDM4MzM1LCJpYXQiOjE3OTU0MzgwMzUsImp0aSI6Ijk2ZDRkYjBiZmUwOTQ0NTM5N2I5ZTljYWUxNTE5NjhiIiwidXNlcl9pZCI6IjEifQ.lh3zP3RCHCwRGxB4681o1DHpNZH31MIJBVSgAx46iLI
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTUyNDQzNSwiaWF0IjoxNzk1NDM4MDM1LCJqdGkiOiJiOTYyZjI4NmU3ZWU0YzZkYjIzYTc3NDc0Y2RlYzE3NiIsInVzZXJfaWQiOiIxIn0.duMd_jzub1lwUw055B8ikQ9W88etOc06B8kmRn47W5I"
+}
+
+###
+GET http://127.0.0.1:8000/category/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDUzMTA3LCJpYXQiOjE3OTU0NTI4MDcsImp0aSI6IjczNzQzYjJjZjM5MzRkOTJhMDc3NzE0MTdhNmZiYWM0IiwidXNlcl9pZCI6IjEifQ.4fpqoECfi7xxPfEN_j2B-8ld1qnM7kHs75ZO2VTYbhs
+
+###
+POST http://127.0.0.1:8000/category/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDQxNzQyLCJpYXQiOjE3OTU0NDE0NDIsImp0aSI6ImEwOGE1NzY3OTAxNTRjN2NhYWNkNjc3NGZmZDZlYzRiIiwidXNlcl9pZCI6IjEifQ.qo_gDDze8-BiLZ3C8eBIjUZfNj8RvSsqVecfZJnfIvs
+
+{
+    "name": "Data Science",
+    "description": "Data Scienece and Machine Learning courses"
+}
+
+###
+GET http://127.0.0.1:8000/category/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDQ0NzI3LCJpYXQiOjE3OTU0NDQ0MjcsImp0aSI6Ijk0NzMzZGE2Y2YzODRiZTg5MGYxMjZhMWI5ZDZmMDZlIiwidXNlcl9pZCI6IjEifQ.d11_D2y0MfdvsxhEkQWmjgHICdAeO-wAyvWtlnSozro
+
+###
+PUT http://127.0.0.1:8000/category/1/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDQ1MDg5LCJpYXQiOjE3OTU0NDQ3ODksImp0aSI6IjA1ZTgzOWNkNDNhZjRmMmU4OTdmYTUwYWI0OTdlY2EyIiwidXNlcl9pZCI6IjEifQ.wu11CiyRKyKF8vvlpPz-k3IxfLfZ5OCpHbU9zFTjjeY
+
+{
+    "name":"Advanced python",
+    "description": "Advanced Python Programming"
+
+}
+
+###
+DELETE http://127.0.0.1:8000/category/4/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDQ1MzY5LCJpYXQiOjE3OTU0NDUwNjksImp0aSI6IjQyZGJjMGJhOGQxNzRmY2FiN2Y4YzZlMjZiYmJjZmJkIiwidXNlcl9pZCI6IjEifQ.EN-1X93J90us4NYYBEA0gWBzL-P7f-K_HRqGwQGvslI
+
+###
+POST http://127.0.0.1:8000/course/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDUzNTgyLCJpYXQiOjE3OTU0NTMyODIsImp0aSI6ImVkODhjNjMyNjdjYjRjMDM4NzZlYmQwYWUxMzQyMGRiIiwidXNlcl9pZCI6IjEifQ.LSh7P-CmqFWut7t0kwx0gvM7qxb5KymdLmF_T5iiYio
+
+{
+    "title": "Django REST Framework",
+    "description": "Learn API development using Django REST Framework",
+    "category": 2
+}
+
+###
+GET http://127.0.0.1:8000/course/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDUzNzM1LCJpYXQiOjE3OTU0NTM0MzUsImp0aSI6ImZlMjc3MmQ2ZDQxNjRiZWRiZGViNmMxYWQ4NjdlZGI5IiwidXNlcl9pZCI6IjEifQ.ZLu7NfUJgrKJLcfEMaSIdf0ZBs31SCl1SwU-saUjUco
+
+###
+GET http://127.0.0.1:8000/course/2/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDU0MTkwLCJpYXQiOjE3OTU0NTM4OTAsImp0aSI6ImYxMmM5MmVmYzA4YTQ2NTU4MGRjNTkxZDY1ZDBiZjZiIiwidXNlcl9pZCI6IjEifQ.VpSz2iFxuJ6k75HQ5IP3XeFNn8cmcQruPqcsSwn_aeE
+###
+PUT http://127.0.0.1:8000/course/1/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDUzODA0LCJpYXQiOjE3OTU0NTM1MDQsImp0aSI6ImVhN2Q1MDI5MjhiODQxODRhZTljNTBmOTM0MjJkM2I5IiwidXNlcl9pZCI6IjEifQ.QXqW5EIOHcHuQ7HPSkfZ7mIMxtYSMj2-UPGoS4YOx7g
+
+{
+    "title": "Advanced Python Programming",
+    "description": "Learn advanced Python concepts, including OOP, decorators, exception handling and modules.",
+    "category": 2
+
+}
+
+###
+DELETE http://127.0.0.1:8000/course/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDU0MTY4LCJpYXQiOjE3OTU0NTM4NjgsImp0aSI6IjgyODQ5ODliNmQ5ODRmM2ZiOGY3NWZhNDk3NjE3Y2ZkIiwidXNlcl9pZCI6IjEifQ.jYJ7r32Zs36hx-A3imBBcX9iiD-LjE88Gg4XtiYkJn8
+
+
+###
+POST http://127.0.0.1:8000/enrollment/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDYyNzg4LCJpYXQiOjE3OTU0NjI0ODgsImp0aSI6IjhhOTEzNzk3ZTMwYzQ4ZWY4ZTljMTI0MGZhMWUwMTk3IiwidXNlcl9pZCI6IjIifQ.ImkHEC4SDKVKuBIx2Jwdf_xXnrlkW2LGOG7BztJa4QI
+
+{
+    "course":2
+}
+
+###
+GET http://127.0.0.1:8000/enrollment/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDYyNzg4LCJpYXQiOjE3OTU0NjI0ODgsImp0aSI6IjhhOTEzNzk3ZTMwYzQ4ZWY4ZTljMTI0MGZhMWUwMTk3IiwidXNlcl9pZCI6IjIifQ.ImkHEC4SDKVKuBIx2Jwdf_xXnrlkW2LGOG7BztJa4QI
+
+###
+GET http://127.0.0.1:8000/enrollment/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDYyNzg4LCJpYXQiOjE3OTU0NjI0ODgsImp0aSI6IjhhOTEzNzk3ZTMwYzQ4ZWY4ZTljMTI0MGZhMWUwMTk3IiwidXNlcl9pZCI6IjIifQ.ImkHEC4SDKVKuBIx2Jwdf_xXnrlkW2LGOG7BztJa4QI
+
+###
+DELETE http://127.0.0.1:8000/enrollment/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NDYyOTU2LCJpYXQiOjE3OTU0NjI2NTYsImp0aSI6IjM2ODdkNDIyMzZmNzRkYTE5MjE0ZGE0YjdkODQ5YTc0IiwidXNlcl9pZCI6IjIifQ.kfPX0vFWLaus7UhAYqUJsRRDo7aVxh4o4xOYZgcHrC8
