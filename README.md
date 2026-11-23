@@ -81,7 +81,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/LearnHub-LMS.git
+git clone https://github.com/https://github.com/dheerajdivakaran/LEARNHUB.git/LearnHub-LMS.git
 ```
 
 ### 2. Navigate to the Project Directory
